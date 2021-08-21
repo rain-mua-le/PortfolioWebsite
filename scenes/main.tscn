@@ -1,0 +1,419 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/Lantern.tscn" type="PackedScene" id=1]
+[ext_resource path="res://textures/water.jpg" type="Texture" id=2]
+[ext_resource path="res://textures/sky.jpg" type="Texture" id=3]
+[ext_resource path="res://textures/path.jpg" type="Texture" id=4]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 2 )
+metallic = 0.1
+metallic_specular = 0.1
+roughness = 0.0
+uv1_scale = Vector3( 100, 100, 100 )
+
+[sub_resource type="PanoramaSky" id=2]
+panorama = ExtResource( 3 )
+
+[sub_resource type="Environment" id=3]
+background_mode = 2
+background_sky = SubResource( 2 )
+ambient_light_color = Color( 0.92549, 0.788235, 0.529412, 1 )
+ambient_light_sky_contribution = 0.52
+fog_enabled = true
+fog_color = Color( 1, 1, 1, 1 )
+fog_sun_color = Color( 0.945098, 0.682353, 0.933333, 1 )
+fog_sun_amount = 0.4
+fog_depth_begin = 0.0
+fog_depth_end = 75.0
+fog_depth_curve = 0.233258
+fog_transmit_enabled = true
+fog_height_curve = 100.427
+glow_enabled = true
+glow_bloom = 0.1
+glow_hdr_threshold = 0.2
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 4 )
+uv1_scale = Vector3( 100, 0.5, 100 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87759, 14.7451 )
+
+[node name="Water" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, -7.438 )
+material_override = SubResource( 1 )
+width = 1000.0
+height = 0.5
+depth = 1000.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
+
+[node name="Path" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1000, 0, 0, 0 )
+material_override = SubResource( 4 )
+
+[node name="Lanterns" type="Spatial" parent="."]
+
+[node name="Lantern1" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.98113, 0, 2.93381 )
+
+[node name="Lantern2" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.92982, 0, 2.60131 )
+
+[node name="Lantern3" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.03362, 0, 0 )
+
+[node name="Lantern4" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58556, 0, 5.21535 )
+
+[node name="Lantern5" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.43199, 0, 1.43243 )
+
+[node name="Lantern6" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.41252, 0, 5.74 )
+
+[node name="Lantern7" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.81321, 0, -3.19061 )
+
+[node name="Lantern8" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98732, 0, 8.39055 )
+
+[node name="Lantern9" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.993698, 0, 0.112093, 0, 1, 0, -0.112093, 0, 0.993698, -3.78898, 0, -8.98857 )
+
+[node name="Lantern10" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.993698, 0, 0.112093, 0, 1, 0, -0.112093, 0, 0.993698, -5.76266, 0, -9.10054 )
+
+[node name="Lantern11" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.993698, 0, 0.112093, 0, 1, 0, -0.112093, 0, 0.993698, -4.17, 0, -11.898 )
+
+[node name="Lantern12" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.993698, 0, 0.112093, 0, 1, 0, -0.112093, 0, 0.993698, -2.14647, 0, -6.87784 )
+
+[node name="Lantern13" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.993698, 0, 0.112093, 0, 1, 0, -0.112093, 0, 0.993698, -2.4179, 0, -10.6541 )
+
+[node name="Lantern14" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.993698, 0, 0.112093, 0, 1, 0, -0.112093, 0, 0.993698, -3.9031, 0, -6.1517 )
+
+[node name="Lantern15" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.993698, 0, 0.112093, 0, 1, 0, -0.112093, 0, 0.993698, -3.36461, 0, -14.8605 )
+
+[node name="Lantern16" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.993698, 0, 0.112093, 0, 1, 0, -0.112093, 0, 0.993698, -2.18977, 0, -3.67762 )
+
+[node name="Lantern17" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.895518, 0, -0.445026, 0, 1, 0, 0.445026, 0, 0.895518, 5.3552, 0, 2.84244 )
+
+[node name="Lantern18" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.895518, 0, -0.445026, 0, 1, 0, 0.445026, 0, 0.895518, 3.75808, 0, 1.67747 )
+
+[node name="Lantern19" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.895518, 0, -0.445026, 0, 1, 0, 0.445026, 0, 0.895518, 6.61381, 0, 0.191805 )
+
+[node name="Lantern20" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.895518, 0, -0.445026, 0, 1, 0, 0.445026, 0, 0.895518, 5.5896, 0, 5.50667 )
+
+[node name="Lantern21" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.895518, 0, -0.445026, 0, 1, 0, 0.445026, 0, 0.895518, 7.41063, 0, 2.18734 )
+
+[node name="Lantern22" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.895518, 0, -0.445026, 0, 1, 0, 0.445026, 0, 0.895518, 3.72005, 0, 5.16346 )
+
+[node name="Lantern23" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.895518, 0, -0.445026, 0, 1, 0, 0.445026, 0, 0.895518, 3.34639, 0, -2.34094 )
+
+[node name="Lantern24" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.895518, 0, -0.445026, 0, 1, 0, 0.445026, 0, 0.895518, 3.81678, 0, 8.17132 )
+
+[node name="Lantern25" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.92772, 0, -4.11191 )
+
+[node name="Lantern26" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97903, 0, -4.4444 )
+
+[node name="Lantern27" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.87523, 0, -7.04571 )
+
+[node name="Lantern28" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.32328, 0, -1.83036 )
+
+[node name="Lantern29" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.47686, 0, -5.61328 )
+
+[node name="Lantern30" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.49632, 0, -1.30571 )
+
+[node name="Lantern31" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.09563, 0, -12.2671 )
+
+[node name="Lantern32" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.92153, 0, 1.34483 )
+
+[node name="Lantern33" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.940857, 0, -0.338804, 0, 1, 0, 0.338804, 0, 0.940857, 6.16885, 0, -14.3941 )
+
+[node name="Lantern34" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.940857, 0, -0.338804, 0, 1, 0, 0.338804, 0, 0.940857, 4.44806, 0, -15.3672 )
+
+[node name="Lantern35" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.940857, 0, -0.338804, 0, 1, 0, 0.338804, 0, 0.940857, 7.11345, 0, -17.1722 )
+
+[node name="Lantern36" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.940857, 0, -0.338804, 0, 1, 0, 0.338804, 0, 0.940857, 6.70888, 0, -11.7747 )
+
+[node name="Lantern37" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.940857, 0, -0.338804, 0, 1, 0, 0.338804, 0, 0.940857, 8.13504, 0, -15.2819 )
+
+[node name="Lantern38" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.940857, 0, -0.338804, 0, 1, 0, 0.338804, 0, 0.940857, 4.81222, 0, -11.9001 )
+
+[node name="Lantern39" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.940857, 0, -0.338804, 0, 1, 0, 0.338804, 0, 0.940857, 7.46301, 0, -23.3955 )
+
+[node name="Lantern40" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.940857, 0, -0.338804, 0, 1, 0, 0.338804, 0, 0.940857, 5.25512, 0, -8.92342 )
+
+[node name="Lantern41" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.980945, 0, -0.194286, 0, 1, 0, 0.194286, 0, 0.980945, -8.4127, 0, 1.77207 )
+
+[node name="Lantern42" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.980945, 0, -0.194286, 0, 1, 0, 0.194286, 0, 0.980945, -10.2597, 0, 1.06731 )
+
+[node name="Lantern43" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.980945, 0, -0.194286, 0, 1, 0, 0.194286, 0, 0.980945, -7.89419, 0, -1.11603 )
+
+[node name="Lantern44" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.980945, 0, -0.194286, 0, 1, 0, 0.194286, 0, 0.980945, -7.487, 0, 4.28128 )
+
+[node name="Lantern45" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.980945, 0, -0.194286, 0, 1, 0, 0.194286, 0, 0.980945, -6.60138, 0, 0.600284 )
+
+[node name="Lantern46" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.980945, 0, -0.194286, 0, 1, 0, 0.194286, 0, 0.980945, -9.38107, 0, 4.44098 )
+
+[node name="Lantern47" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.980945, 0, -0.194286, 0, 1, 0, 0.194286, 0, 0.980945, -8.47927, 0, -7.32164 )
+
+[node name="Lantern48" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.980945, 0, -0.194286, 0, 1, 0, 0.194286, 0, 0.980945, -8.49799, 0, 7.31792 )
+
+[node name="Lantern49" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( -0.898993, 0, 0.437963, 0, 1, 0, -0.437963, 0, -0.898993, -5.69478, 0, -20.4119 )
+
+[node name="Lantern50" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( -0.898993, 0, 0.437963, 0, 1, 0, -0.437963, 0, -0.898993, -4.08854, 0, -19.2595 )
+
+[node name="Lantern51" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( -0.898993, 0, 0.437963, 0, 1, 0, -0.437963, 0, -0.898993, -6.93249, 0, -17.7514 )
+
+[node name="Lantern52" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( -0.898993, 0, 0.437963, 0, 1, 0, -0.437963, 0, -0.898993, -5.95015, 0, -23.0742 )
+
+[node name="Lantern53" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( -0.898993, 0, 0.437963, 0, 1, 0, -0.437963, 0, -0.898993, -7.74499, 0, -19.7406 )
+
+[node name="Lantern54" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( -0.898993, 0, 0.437963, 0, 1, 0, -0.437963, 0, -0.898993, -4.07795, 0, -22.7457 )
+
+[node name="Lantern55" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( -0.898993, 0, 0.437963, 0, 1, 0, -0.437963, 0, -0.898993, -6.33392, 0, -14.1247 )
+
+[node name="Lantern56" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( -0.898993, 0, 0.437963, 0, 1, 0, -0.437963, 0, -0.898993, -4.19836, 0, -25.7527 )
+
+[node name="Lantern57" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.992245, 0, 0.124294, 0, 1, 0, -0.124294, 0, 0.992245, -12.0465, 0, -8.36162 )
+
+[node name="Lantern58" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.992245, 0, 0.124294, 0, 1, 0, -0.124294, 0, 0.992245, -14.0214, 0, -8.44932 )
+
+[node name="Lantern59" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.992245, 0, 0.124294, 0, 1, 0, -0.124294, 0, 0.992245, -12.4633, 0, -11.2661 )
+
+[node name="Lantern60" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.992245, 0, 0.124294, 0, 1, 0, -0.124294, 0, 0.992245, -10.3782, 0, -6.27122 )
+
+[node name="Lantern61" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.992245, 0, 0.124294, 0, 1, 0, -0.124294, 0, 0.992245, -10.696, 0, -10.0439 )
+
+[node name="Lantern62" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.992245, 0, 0.124294, 0, 1, 0, -0.124294, 0, 0.992245, -12.1258, 0, -5.52356 )
+
+[node name="Lantern63" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.992245, 0, 0.124294, 0, 1, 0, -0.124294, 0, 0.992245, -14.9716, 0, -16.9723 )
+
+[node name="Lantern64" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.992245, 0, 0.124294, 0, 1, 0, -0.124294, 0, 0.992245, -10.3822, 0, -3.07071 )
+
+[node name="Lantern65" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.993142, 0, 0.116913, 0, 1, 0, -0.116913, 0, 0.993142, -9.56532, 0, -15.2448 )
+
+[node name="Lantern66" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.993142, 0, 0.116913, 0, 1, 0, -0.116913, 0, 0.993142, -11.5395, 0, -15.3471 )
+
+[node name="Lantern67" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.993142, 0, 0.116913, 0, 1, 0, -0.116913, 0, 0.993142, -9.96045, 0, -18.1523 )
+
+[node name="Lantern68" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.993142, 0, 0.116913, 0, 1, 0, -0.116913, 0, 0.993142, -7.91258, 0, -13.142 )
+
+[node name="Lantern69" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.993142, 0, 0.116913, 0, 1, 0, -0.116913, 0, 0.993142, -8.20233, 0, -16.9169 )
+
+[node name="Lantern70" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.993142, 0, 0.116913, 0, 1, 0, -0.116913, 0, 0.993142, -9.66567, 0, -12.4074 )
+
+[node name="Lantern71" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.993142, 0, 0.116913, 0, 1, 0, -0.116913, 0, 0.993142, -11.4038, 0, -21.4006 )
+
+[node name="Lantern72" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.993142, 0, 0.116913, 0, 1, 0, -0.116913, 0, 0.993142, -7.94036, 0, -9.94162 )
+
+[node name="Lantern73" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.912599, 0, -0.408856, 0, 1, 0, 0.408856, 0, 0.912599, 8.70162, 0, 7.11983 )
+
+[node name="Lantern74" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.912599, 0, -0.408856, 0, 1, 0, 0.408856, 0, 0.912599, 7.05919, 0, 6.01966 )
+
+[node name="Lantern75" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.912599, 0, -0.408856, 0, 1, 0, 0.408856, 0, 0.912599, 9.85322, 0, 4.42098 )
+
+[node name="Lantern76" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.912599, 0, -0.408856, 0, 1, 0, 0.408856, 0, 0.912599, 9.04239, 0, 9.77255 )
+
+[node name="Lantern77" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.912599, 0, -0.408856, 0, 1, 0, 0.408856, 0, 0.912599, 10.7292, 0, 6.38306 )
+
+[node name="Lantern78" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.912599, 0, -0.408856, 0, 1, 0, 0.408856, 0, 0.912599, 7.1606, 0, 9.50439 )
+
+[node name="Lantern79" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.912599, 0, -0.408856, 0, 1, 0, 0.408856, 0, 0.912599, 10.6715, 0, -1.7582 )
+
+[node name="Lantern80" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.912599, 0, -0.408856, 0, 1, 0, 0.408856, 0, 0.912599, 7.37755, 0, 12.506 )
+
+[node name="Lantern81" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.920102, 0, -0.391679, 0, 1, 0, 0.391679, 0, 0.920102, 10.5607, 0, -11.2198 )
+
+[node name="Lantern82" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.920102, 0, -0.391679, 0, 1, 0, 0.391679, 0, 0.920102, 8.89794, 0, -12.289 )
+
+[node name="Lantern83" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.920102, 0, -0.391679, 0, 1, 0, 0.391679, 0, 0.920102, 11.6615, 0, -13.9397 )
+
+[node name="Lantern84" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.920102, 0, -0.391679, 0, 1, 0, 0.391679, 0, 0.920102, 10.9511, 0, -8.57392 )
+
+[node name="Lantern85" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.920102, 0, -0.391679, 0, 1, 0, 0.391679, 0, 0.920102, 12.5741, 0, -11.9944 )
+
+[node name="Lantern86" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.920102, 0, -0.391679, 0, 1, 0, 0.391679, 0, 0.920102, 9.06464, 0, -8.80677 )
+
+[node name="Lantern87" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.920102, 0, -0.391679, 0, 1, 0, 0.391679, 0, 0.920102, 10.295, 0, -20.1332 )
+
+[node name="Lantern88" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.920102, 0, -0.391679, 0, 1, 0, 0.391679, 0, 0.920102, 9.33781, 0, -5.80978 )
+
+[node name="Lantern89" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.97998, 0, -0.199094, 0, 1, 0, 0.199094, 0, 0.97998, 13.1672, 0, -6.23807 )
+
+[node name="Lantern90" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.97998, 0, -0.199094, 0, 1, 0, 0.199094, 0, 0.97998, 11.3237, 0, -6.95188 )
+
+[node name="Lantern91" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.97998, 0, -0.199094, 0, 1, 0, 0.199094, 0, 0.97998, 13.6999, 0, -9.12359 )
+
+[node name="Lantern92" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.97998, 0, -0.199094, 0, 1, 0, 0.199094, 0, 0.97998, 14.0806, 0, -3.72435 )
+
+[node name="Lantern93" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.97998, 0, -0.199094, 0, 1, 0, 0.199094, 0, 0.97998, 14.9843, 0, -7.40096 )
+
+[node name="Lantern94" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.97998, 0, -0.199094, 0, 1, 0, 0.199094, 0, 0.97998, 12.1858, 0, -3.57394 )
+
+[node name="Lantern95" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.97998, 0, -0.199094, 0, 1, 0, 0.199094, 0, 0.97998, 13.1452, 0, -15.332 )
+
+[node name="Lantern96" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.97998, 0, -0.199094, 0, 1, 0, 0.199094, 0, 0.97998, 13.0547, 0, -0.692704 )
+
+[node name="Lantern97" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05828, 0, -24.9935 )
+
+[node name="Lantern98" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.10959, 0, -25.326 )
+
+[node name="Lantern99" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.00578, 0, -27.9273 )
+
+[node name="Lantern100" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.45384, 0, -22.712 )
+
+[node name="Lantern101" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.60742, 0, -26.4949 )
+
+[node name="Lantern102" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.62688, 0, -22.1873 )
+
+[node name="Lantern103" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.22619, 0, -33.901 )
+
+[node name="Lantern104" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.05209, 0, -19.5368 )
+
+[node name="Lantern105" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.835088, 0, -0.550116, 0, 1, 0, 0.550116, 0, 0.835088, -7.68796, 0, -29.9855 )
+
+[node name="Lantern106" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.835088, 0, -0.550116, 0, 1, 0, 0.550116, 0, 0.835088, -9.13237, 0, -31.3352 )
+
+[node name="Lantern107" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.835088, 0, -0.550116, 0, 1, 0, 0.550116, 0, 0.835088, -6.11785, 0, -32.4644 )
+
+[node name="Lantern108" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.835088, 0, -0.550116, 0, 1, 0, 0.550116, 0, 0.835088, -7.77765, 0, -27.3125 )
+
+[node name="Lantern109" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.835088, 0, -0.550116, 0, 1, 0, 0.550116, 0, 0.835088, -5.56836, 0, -30.3871 )
+
+[node name="Lantern110" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.835088, 0, -0.550116, 0, 1, 0, 0.550116, 0, 0.835088, -9.59194, 0, -27.8794 )
+
+[node name="Lantern111" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.835088, 0, -0.550116, 0, 1, 0, 0.550116, 0, 0.835088, -4.31775, 0, -38.4319 )
+
+[node name="Lantern112" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.835088, 0, -0.550116, 0, 1, 0, 0.550116, 0, 0.835088, -9.85988, 0, -24.8819 )
+
+[node name="Lantern113" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.968869, 0, 0.247574, 0, 1, 0, -0.247574, 0, 0.968869, 8.96, 0, -29.8629 )
+
+[node name="Lantern114" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.968869, 0, 0.247574, 0, 1, 0, -0.247574, 0, 0.968869, 6.98965, 0, -29.7026 )
+
+[node name="Lantern115" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.968869, 0, 0.247574, 0, 1, 0, -0.247574, 0, 0.968869, 8.1828, 0, -32.6924 )
+
+[node name="Lantern116" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.968869, 0, 0.247574, 0, 1, 0, -0.247574, 0, 0.968869, 10.877, 0, -27.9979 )
+
+[node name="Lantern117" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.968869, 0, 0.247574, 0, 1, 0, -0.247574, 0, 0.968869, 10.0892, 0, -31.7011 )
+
+[node name="Lantern118" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.968869, 0, 0.247574, 0, 1, 0, -0.247574, 0, 0.968869, 9.23677, 0, -27.0373 )
+
+[node name="Lantern119" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.968869, 0, 0.247574, 0, 1, 0, -0.247574, 0, 0.968869, 4.97968, 0, -38.0396 )
+
+[node name="Lantern120" parent="Lanterns" instance=ExtResource( 1 )]
+transform = Transform( 0.968869, 0, 0.247574, 0, 1, 0, -0.247574, 0, 0.968869, 11.2738, 0, -24.8221 )
